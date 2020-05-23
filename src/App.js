@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SearchFuntion from 'react';
+import SearchFunction from 'react';
 import './App.css';
 
 class App extends Component {
@@ -13,15 +13,13 @@ class App extends Component {
       {id: 1, title: "Avengers: Infinity War", overview: "filler"},
     ]
 
-    this.state = {rows: [ 
-      <p key="1">This is my rows</p>
-    ]}
-
     var movieRows = []
     movies.forEach((movie) => {
       console.log(movie.title)
-      movieRows.push(<p>Movie title: {movie.title}</p>)
+      movieRows.push(<p key={movie.id}>{movie.title}</p>)
     })
+
+    this.state = {rows: movieRows}
   }
 
   render() {
