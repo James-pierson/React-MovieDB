@@ -7,6 +7,13 @@
   pointer-events: none;
 }
 
+.titleBar {
+  background-color: #000;
+  display: block;
+  color: #fff;
+  padding-left: 16;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
