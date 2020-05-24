@@ -9,17 +9,29 @@ class App extends Component {
 
 
     const movies = [
-      {id: 0, title: "Avengers: Infinity War", overview: "filler"},
-      {id: 1, title: "Avengers: Infinity War", overview: "filler"},
+      { id: 0, title: "Avengers: Infinity War", overview: "filler" },
+      { id: 1, title: "Avengers: Infinity War", overview: "filler" },
     ]
 
     var movieRows = []
     movies.forEach((movie) => {
       console.log(movie.title)
-      movieRows.push(<p key={movie.id}>{movie.title}</p>)
+      const movieRow = <table key={movie.id}>
+        <tbody>
+          <tr>
+            <td>
+              <img alt="poster" src="" />
+            </td>
+            <td />
+            <td>
+              {movie.title}
+            </td>
+          </tr>
+        </tbody>
+      </table>
     })
 
-    this.state = {rows: movieRows}
+    this.state = { rows: movieRows }
   }
 
   render() {
@@ -29,11 +41,11 @@ class App extends Component {
           <tbody>
             <tr>
               <td>
-                <img width="100" alt="logo" src="logo.png"/>
+                <img width="100" alt="logo" src="logo.png" />
               </td>
-              <td width="8"/>
+              <td width="8" />
               <td>
-                 <h3>MoviesDB Search</h3>
+                <h3>MoviesDB Search</h3>
               </td>
             </tr>
           </tbody>
@@ -46,7 +58,7 @@ class App extends Component {
           paddingTop: 8,
           paddingBottom: 8,
           paddingLeft: 16
-        }} placeholder="Enter search tearm"/>
+        }} placeholder="Enter search term" />
 
         {this.state.rows}
       </div>
