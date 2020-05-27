@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import SearchFunction from 'react';
+import MovieRow from "./MovieRow"
+import API from '/api.js';
 import './App.css';
 
 class App extends Component {
@@ -14,21 +15,23 @@ class App extends Component {
     ]
 
     var movieRows = []
-    movies.forEach((movie) => {
+    API.forEach((movie) => {
       console.log(movie.title)
-      const movieRow = <table key={movie.id}>
-        <tbody>
-          <tr>
-            <td>
-              <img alt="poster" src="" />
-            </td>
-            <td />
-            <td>
-              {movie.title}
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      const movieRow = <MovieRow />
+      // const movieRow = <table key={movie.id}>
+      //   <tbody>
+      //     <tr>
+      //       <td>
+      //         <img alt="poster" src="" />
+      //       </td>
+      //       <td />
+      //       <td>
+      //         {movie.title}
+      //       </td>
+      //     </tr>
+      //   </tbody>
+      // </table>
+      movieRows.push(movieRow)
     })
 
     this.state = { rows: movieRows }
