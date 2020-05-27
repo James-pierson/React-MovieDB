@@ -1,40 +1,32 @@
 import React, { Component } from 'react';
 import MovieRow from "./MovieRow"
-import API from '/api.js';
 import './App.css';
 
 class App extends Component {
   constructor(props) {
     super(props)
-    console.log("This is my initializer")
+    // console.log("This is my initializer")
 
 
-    const movies = [
-      { id: 0, title: "Avengers: Infinity War", overview: "filler" },
-      { id: 1, title: "Avengers: Infinity War", overview: "filler" },
-    ]
+    // const movies = [
+    //   { id: 0, title: "Avengers: Infinity War", overview: "filler" },
+    //   { id: 1, title: "Avengers: Infinity War", overview: "filler" },
+    // ]
 
-    var movieRows = []
-    API.forEach((movie) => {
-      console.log(movie.title)
-      const movieRow = <MovieRow />
-      // const movieRow = <table key={movie.id}>
-      //   <tbody>
-      //     <tr>
-      //       <td>
-      //         <img alt="poster" src="" />
-      //       </td>
-      //       <td />
-      //       <td>
-      //         {movie.title}
-      //       </td>
-      //     </tr>
-      //   </tbody>
-      // </table>
-      movieRows.push(movieRow)
-    })
+    // var movieRows = []
+    // movies.forEach((movie) => {
+    //   console.log(movie.title)
+    //   const movieRow = <MovieRow movie={movie}/>
+    //   movieRows.push(movieRow)
+    // })
 
-    this.state = { rows: movieRows }
+    // this.state = { rows: movieRows }
+
+    this.performSearch()
+  }
+
+  performSearch() {
+    console.log("Perform search using this")
   }
 
   render() {
