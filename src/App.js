@@ -1,32 +1,36 @@
 import React, { Component } from 'react';
 import MovieRow from "./MovieRow"
+import $ from "jquery"
 import './App.css';
 
 class App extends Component {
   constructor(props) {
     super(props)
-    // console.log("This is my initializer")
-
-
-    // const movies = [
-    //   { id: 0, title: "Avengers: Infinity War", overview: "filler" },
-    //   { id: 1, title: "Avengers: Infinity War", overview: "filler" },
-    // ]
-
-    // var movieRows = []
-    // movies.forEach((movie) => {
-    //   console.log(movie.title)
-    //   const movieRow = <MovieRow movie={movie}/>
-    //   movieRows.push(movieRow)
-    // })
-
-    // this.state = { rows: movieRows }
 
     this.performSearch()
   }
 
   performSearch() {
-    console.log("Perform search using this")
+    const urlString = ""
+    $.ajax( {
+      url: urlString,
+      success: (searchResults) => {
+        const results = searchResults.results
+
+        var movieRows = []
+
+        results.forEach((movie) => {
+          const movieRow = <MovieRow movie={movie}/>
+          movieRows.push(movieRow)
+        })
+
+        this.setState({rows: movieRows})
+      },
+      error: (xhr, status, err) => {
+        console.error("Failed to fetch data")
+      }
+
+    })
   }
 
   render() {
