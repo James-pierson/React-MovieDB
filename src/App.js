@@ -16,9 +16,9 @@ class App extends Component {
       url: urlString,
       success: (searchResults) => {
         const results = searchResults.results
-
         var movieRows = []
 
+        // Loops through movies
         results.forEach((movie) => {
           const movieRow = <MovieRow movie={movie}/>
           movieRows.push(movieRow)
@@ -31,6 +31,12 @@ class App extends Component {
       }
 
     })
+  }
+
+  searchResults(event) {
+    const boundObject = this
+    const searchTerm = event.target.value
+    boundObject.performSearch(searchTerm)
   }
 
   render() {
@@ -57,7 +63,7 @@ class App extends Component {
           paddingTop: 8,
           paddingBottom: 8,
           paddingLeft: 16
-        }} placeholder="Enter search term" />
+        }} onChange={this.searchResults} placeholder="Enter search term" />
 
         {this.state.rows}
       </div>
