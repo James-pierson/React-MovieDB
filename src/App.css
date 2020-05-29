@@ -7,6 +7,14 @@
   pointer-events: none;
 }
 
+.tableStyle {
+  margin: 10px;
+}
+
+.posterImg {
+  border-radius: 15px;
+}
+
 .titleBar {
   background-color: #000;
   display: block;

@@ -7,11 +7,11 @@ class MovieRow extends React.Component {
     }
 
     render() {
-        return <table key={this.props.movie.id}>
+        return <table className="tableStyle" key={this.props.movie.id}>
         <tbody>
           <tr>
             <td>
-              <img alt="poster" width="120" src={this.props.movie.poster_src} />
+              <img className="posterImg"alt="poster" width="120" src={this.props.movie.poster_src} />
             </td>
             <td/>
             <td>
