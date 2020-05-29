@@ -6,6 +6,10 @@ class MovieRow extends React.Component {
       console.log("test")
     }
 
+    playMovie() {
+      console.log("test 2")
+    }
+
     render() {
         return <table className="tableStyle" key={this.props.movie.id}>
         <tbody>
@@ -18,7 +22,8 @@ class MovieRow extends React.Component {
               <strong>{this.props.movie.title}</strong>
               <p>{this.props.movie.overview}</p>
               <input type="button" onClick={this.viewMovie} value="View"/>
-            </td>
+              <input type="button" onClick={this.playMovie} value="Play"/>
+            </td> 
           </tr>
         </tbody>
       </table>
