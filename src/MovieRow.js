@@ -1,6 +1,11 @@
 import React from "react"
 
 class MovieRow extends React.Component {
+
+    viewMovie() {
+      console.log("test")
+    }
+
     render() {
         return <table key={this.props.movie.id}>
         <tbody>
@@ -10,8 +15,9 @@ class MovieRow extends React.Component {
             </td>
             <td/>
             <td>
-              {this.props.movie.title}
+              <strong>{this.props.movie.title}</strong>
               <p>{this.props.movie.overview}</p>
+              <input type="button" onClick={this.viewMovie} value="View"/>
             </td>
           </tr>
         </tbody>
