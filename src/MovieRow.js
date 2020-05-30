@@ -15,12 +15,12 @@ class MovieRow extends React.Component {
         <tbody>
           <tr>
             <td>
-              <img className="posterImg"alt="poster" width="120" src={this.props.movie.poster_src} />
+              <img className="posterImg" width="120" src={this.props.movie.poster_src} />
             </td>
             <td/>
             <td>
               <strong>{this.props.movie.title}</strong>
-              <p>{this.props.movie.overview}</p>
+              <p className="overviewStyle">{this.props.movie.overview}</p>
               <input type="button" onClick={this.viewMovie} value="View"/>
               <input type="button" onClick={this.playMovie} value="Play"/>
             </td> 

@@ -57,7 +57,7 @@ class App extends Component {
           </tbody>
         </table>
 
-        <input style={{
+        <input className="searchInput" style={{
           fontSize: 24,
           display: 'block',
           width: '99%',
